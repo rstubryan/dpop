@@ -35,7 +35,7 @@ window.onload = () => {
       // Setelah 1 detik (1000 milidetik), panggil fungsi resetImage()
       setTimeout(() => {
         resetImage();
-      }, 100);
+      }, 1000);
     }
   });
 
@@ -50,7 +50,7 @@ window.onload = () => {
       // Setelah 1 detik (1000 milidetik), panggil fungsi resetImage()
       setTimeout(() => {
         resetImage();
-      }, 100);
+      }, 1000);
     }
   });
 
