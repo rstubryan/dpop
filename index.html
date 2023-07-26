@@ -18,14 +18,12 @@
 
     <!-- Sebuah div untuk judul Dzikir.pop dan hitungan counter -->
     <div class="text-center">
-      <h1
-        class="text-white uppercase text-9xl font-bold mb-4 tracking-wide stroke-3"
-      >
+      <h1 class="text-white uppercase text-9xl font-bold max-[1023px]:text-4xl">
         Dzikir.pop
       </h1>
       <p
         id="hitung"
-        class="text-white uppercase text-9xl font-bold mb-4 tracking-wide stroke-3"
+        class="text-white uppercase text-9xl font-bold max-[1023px]:text-4xl"
       >
         0
       </p>
@@ -33,30 +31,27 @@
 
     <!-- Sebuah div untuk gambar (doa1) -->
     <div class="flex justify-center items-center py-6">
-      <img src="berdoa1.png" id="doa1" class="w-72" />
+      <img src="berdoa1.png" id="doa1" class="w-52" />
     </div>
 
     <!-- Sebuah kontainer untuk elemen select (prov) -->
-    <div class="container mx-auto w-full px-96">
+    <div class="container mx-auto text-center items-center">
       <label for="prov" class="block mb-2 text-sm font-medium text-black"
         >Pilih sebuah Provinsi</label
       >
       <select
         id="prov"
-        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+        class="container mx-auto w-96 max-[1023px]:w-60 block text-center items-centerbg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5"
       >
         <!-- Opsi default -->
         <option value="" selected>Pilih sebuah Provinsi</option>
       </select>
     </div>
 
-    <div class="flex items-center justify-center py-4 text-center" id="lead">
-      <div class="w-full px-96 mx-auto container">
-        <div class="bg-blue-100 rounded-lg">
-          <p class="px-3 py-2 text-gray-800"></p>
-        </div>
-      </div>
-    </div>
+    <div
+      class="items-center justify-center py-4 text-center mx-auto block"
+      id="lead"
+    ></div>
 
     <!-- Dalam tag <head> atau sebelum memanggil skrip JavaScript -->
     <script>
@@ -68,7 +63,9 @@
           selectElement.options[selectElement.selectedIndex].text;
 
         // Memuat data dari API menggunakan fetch berdasarkan selectedId
-        fetch(`https://dzikirpop.000webhostapp.com/dzikir_api.php?id=${selectedId}`)
+        fetch(
+          `https://dzikirpop.000webhostapp.com/dzikir_api.php?id=${selectedId}`
+        )
           .then((response) => response.json())
           .then((data) => {
             // Mengambil data pertama dari respons (asumsikan datanya adalah array)
@@ -79,9 +76,9 @@
 
             // Menampilkan skor/count pada elemen dengan ID "lead"
             document.getElementById("lead").innerHTML = `
-            <div class="w-full px-96 mx-auto container">
-              <div class="bg-blue-100 rounded-lg">
-                <p class="px-3 py-2 text-gray-800">Skor : ${count}</p>
+            <div class="w-96 max-[1023px]:w-52 mx-auto container">
+              <div class="bg-blue-100 rounded-lg max-[1023px]:w-52"">
+                <p class="px-3 py-2 text-gray-800 max-[1023px]:w-52">Skor : ${count}</p>
               </div>
             </div>
           `;
@@ -116,7 +113,7 @@
 
     <div id="leader" class="container mx-auto">
       <div class="flex items-center justify-center">
-        <div class="w-full px-96 mx-auto container">
+        <div class="w-96 max-[1023px]:w-60 mx-auto container">
           <details class="rounded-lg">
             <summary
               class="font-semibold bg-white px-4 py-2 text-lg cursor-pointer rounded-lg"
