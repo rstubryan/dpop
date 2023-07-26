@@ -8,18 +8,8 @@ window.onload = () => {
   let score = 0;
   let sound = new Audio("subhanallah.mp3");
 
-  // Menambahkan event listener untuk event "mousedown" pada gambar
-  img.addEventListener("mousedown", () => {
-    img.src = "berdoa2.png"; // Mengganti sumber gambar saat mouse ditekan
-    sound.currentTime = 0; // Menyetel waktu audio kembali ke awal
-    sound.play(); // Memainkan audio "subhanallah.mp3"
-    addToCounter(); // Memanggil fungsi addToCounter() untuk menambah nilai counter
-  });
-
-  // Menambahkan event listener untuk event "mouseup" pada gambar
-  img.addEventListener("mouseup", () => {
-    img.src = "berdoa1.png"; // Mengganti sumber gambar saat mouse dilepaskan
-  });
+  // Inisialisasi flag untuk penanda klik
+  let isClicked = false;
 
   // Fungsi untuk menambah nilai pada variabel score dan mengupdate tampilan counter
   function addToCounter() {
@@ -27,9 +17,59 @@ window.onload = () => {
     counter.innerHTML = score; // Mengganti isi elemen "hitung" dengan nilai dari variabel score
   }
 
+  // Fungsi untuk mengembalikan gambar ke posisi semula
+  function resetImage() {
+    img.src = "berdoa1.png"; // Mengganti sumber gambar menjadi "berdoa1.png"
+  }
+
+  // Menambahkan event listener untuk event "touchstart" dan "mousedown" pada gambar
+  img.addEventListener("touchstart", (event) => {
+    if (!isClicked) {
+      isClicked = true; // Set flag menjadi true untuk mencegah aksi klik kedua
+      event.preventDefault(); // Mencegah aksi default saat sentuhan dimulai
+      img.src = "berdoa2.png"; // Mengganti sumber gambar saat sentuhan dimulai
+      sound.currentTime = 0; // Menyetel waktu audio kembali ke awal
+      sound.play(); // Memainkan audio "subhanallah.mp3"
+      addToCounter(); // Memanggil fungsi addToCounter() untuk menambah nilai counter
+
+      // Setelah 1 detik (1000 milidetik), panggil fungsi resetImage()
+      setTimeout(() => {
+        resetImage();
+      }, 100);
+    }
+  });
+
+  img.addEventListener("mousedown", () => {
+    if (!isClicked) {
+      isClicked = true; // Set flag menjadi true untuk mencegah aksi klik kedua
+      img.src = "berdoa2.png"; // Mengganti sumber gambar saat mouse ditekan
+      sound.currentTime = 0; // Menyetel waktu audio kembali ke awal
+      sound.play(); // Memainkan audio "subhanallah.mp3"
+      addToCounter(); // Memanggil fungsi addToCounter() untuk menambah nilai counter
+
+      // Setelah 1 detik (1000 milidetik), panggil fungsi resetImage()
+      setTimeout(() => {
+        resetImage();
+      }, 100);
+    }
+  });
+
+  // Menambahkan event listener untuk event "touchend" dan "mouseup" pada gambar
+  img.addEventListener("touchend", () => {
+    isClicked = false; // Set flag kembali ke false setelah sentuhan berakhir
+  });
+
+  img.addEventListener("mouseup", () => {
+    isClicked = false; // Set flag kembali ke false setelah mouse ditekan
+  });
+
   // Menambahkan event listener untuk event "ended" pada audio
   sound.addEventListener("ended", () => {
     sound.currentTime = 0; // Menyetel waktu audio kembali ke awal saat audio selesai diputar
   });
-};
 
+  document.getElementById("doa1").addEventListener("touchstart", function () {
+    const selectedProvince = document.getElementById("prov").value;
+    updateData(selectedProvince);
+  });
+};
