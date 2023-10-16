@@ -18,12 +18,12 @@
 
     <!-- Sebuah div untuk judul Dzikir.pop dan hitungan counter -->
     <div class="text-center">
-      <h1 class="text-white uppercase text-9xl font-bold md:text-4xl">
+      <h1 class="text-white uppercase md:text-9xl font-bold text-4xl">
         Dzikir.pop
       </h1>
       <p
         id="hitung"
-        class="text-white uppercase text-9xl font-bold md:text-4xl"
+        class="text-white uppercase md:text-9xl font-bold text-4xl"
       >
         0
       </p>
@@ -41,7 +41,7 @@
       >
       <select
         id="prov"
-        class="container mx-auto w-96 md:w-60 block text-center items-centerbg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5"
+        class="container mx-auto md:w-96 w-60 block text-center items-centerbg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5"
       >
         <!-- Opsi default -->
         <option value="" selected>Pilih sebuah Provinsi</option>
@@ -49,7 +49,7 @@
     </div>
 
     <div
-      class="items-center justify-center py-4 text-center mx-auto block"
+      class="items-center justify-center py-4 text-center mx-auto"
       id="lead"
     ></div>
 
@@ -76,9 +76,9 @@
 
             // Menampilkan skor/count pada elemen dengan ID "lead"
             document.getElementById("lead").innerHTML = `
-            <div class="w-96 md:w-52 mx-auto container">
-              <div class="bg-blue-100 rounded-lg md:w-52"">
-                <p class="px-3 py-2 text-gray-800 md:w-52">Skor : ${count}</p>
+            <div class="md:w-96 w-60 mx-auto container">
+              <div class="bg-blue-100 rounded-lg md:w-96 w-60">
+                <p class="px-3 py-2 text-gray-800 md:w-96 w-60">Skor : ${count}</p>
               </div>
             </div>
           `;
@@ -113,7 +113,7 @@
 
     <div id="leader" class="container mx-auto">
       <div class="flex items-center justify-center">
-        <div class="w-96 md:w-60 mx-auto container">
+        <div class="md:w-96 w-60 mx-auto container">
           <details class="rounded-lg">
             <summary
               class="font-semibold bg-white px-4 py-2 text-lg cursor-pointer rounded-lg"
