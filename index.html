@@ -13,17 +13,17 @@
     <script src="src/update.js"></script>
     <script src="src/tabel.js"></script>
   </head>
-  <body class="bg-[#0077ff]">
+  <body class="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500">
     <!-- Konten halaman dimulai di sini -->
 
     <!-- Sebuah div untuk judul Dzikir.pop dan hitungan counter -->
     <div class="text-center">
-      <h1 class="text-white uppercase text-9xl font-bold max-[1023px]:text-4xl">
+      <h1 class="text-white uppercase text-9xl font-bold md:text-4xl">
         Dzikir.pop
       </h1>
       <p
         id="hitung"
-        class="text-white uppercase text-9xl font-bold max-[1023px]:text-4xl"
+        class="text-white uppercase text-9xl font-bold md:text-4xl"
       >
         0
       </p>
@@ -41,7 +41,7 @@
       >
       <select
         id="prov"
-        class="container mx-auto w-96 max-[1023px]:w-60 block text-center items-centerbg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5"
+        class="container mx-auto w-96 md:w-60 block text-center items-centerbg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5"
       >
         <!-- Opsi default -->
         <option value="" selected>Pilih sebuah Provinsi</option>
@@ -76,9 +76,9 @@
 
             // Menampilkan skor/count pada elemen dengan ID "lead"
             document.getElementById("lead").innerHTML = `
-            <div class="w-96 max-[1023px]:w-52 mx-auto container">
-              <div class="bg-blue-100 rounded-lg max-[1023px]:w-52"">
-                <p class="px-3 py-2 text-gray-800 max-[1023px]:w-52">Skor : ${count}</p>
+            <div class="w-96 md:w-52 mx-auto container">
+              <div class="bg-blue-100 rounded-lg md:w-52"">
+                <p class="px-3 py-2 text-gray-800 md:w-52">Skor : ${count}</p>
               </div>
             </div>
           `;
@@ -113,7 +113,7 @@
 
     <div id="leader" class="container mx-auto">
       <div class="flex items-center justify-center">
-        <div class="w-96 max-[1023px]:w-60 mx-auto container">
+        <div class="w-96 md:w-60 mx-auto container">
           <details class="rounded-lg">
             <summary
               class="font-semibold bg-white px-4 py-2 text-lg cursor-pointer rounded-lg"
