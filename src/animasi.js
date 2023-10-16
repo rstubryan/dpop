@@ -19,7 +19,7 @@ window.onload = () => {
 
   // Fungsi untuk mengembalikan gambar ke posisi semula
   function resetImage() {
-    img.src = "berdoa1.png"; // Mengganti sumber gambar menjadi "berdoa1.png"
+    img.src = "berdoaa1.png"; // Mengganti sumber gambar menjadi "berdoa1.png"
   }
 
   // Menambahkan event listener untuk event "touchstart" dan "mousedown" pada gambar
@@ -27,7 +27,7 @@ window.onload = () => {
     if (!isClicked) {
       isClicked = true; // Set flag menjadi true untuk mencegah aksi klik kedua
       event.preventDefault(); // Mencegah aksi default saat sentuhan dimulai
-      img.src = "berdoa2.png"; // Mengganti sumber gambar saat sentuhan dimulai
+      img.src = "berdoaa2.png"; // Mengganti sumber gambar saat sentuhan dimulai
       sound.currentTime = 0; // Menyetel waktu audio kembali ke awal
       sound.play(); // Memainkan audio "subhanallah.mp3"
       addToCounter(); // Memanggil fungsi addToCounter() untuk menambah nilai counter
@@ -42,7 +42,7 @@ window.onload = () => {
   img.addEventListener("mousedown", () => {
     if (!isClicked) {
       isClicked = true; // Set flag menjadi true untuk mencegah aksi klik kedua
-      img.src = "berdoa2.png"; // Mengganti sumber gambar saat mouse ditekan
+      img.src = "berdoaa2.png"; // Mengganti sumber gambar saat mouse ditekan
       sound.currentTime = 0; // Menyetel waktu audio kembali ke awal
       sound.play(); // Memainkan audio "subhanallah.mp3"
       addToCounter(); // Memanggil fungsi addToCounter() untuk menambah nilai counter
