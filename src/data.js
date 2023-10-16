@@ -8,9 +8,9 @@ function loadData() {
 
       let tableData = `
         <tr>
-          <th class="border-slate-950 bg-green-500">ID</th>
-          <th class="border-slate-950 bg-green-500">Provinsi</th>
-          <th class="border-slate-950 bg-green-500">Skor</th>
+          <th class="border-slate-950 bg-blue-100">ID</th>
+          <th class="border-slate-950 bg-blue-100">Provinsi</th>
+          <th class="border-slate-950 bg-blue-100">Skor</th>
         </tr>`;
 
       // Membuat baris tabel untuk setiap item dalam data
